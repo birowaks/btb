@@ -1,0 +1,152 @@
+ <html>
+<head>
+<title>{% block title %}{% endblock %} - buythebeat.com</title>
+
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href='/static/css/bootstrap.min.css'>
+    <!-- integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href='/static/css/bootstrap-theme.min.css'>
+    <!-- integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
+
+    <link rel="stylesheet" href='/static/css/base.css'>
+
+</head>
+<body>
+<nav class="navbar navbar-btb">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" id="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" id="navbar-brand" href="{{base_url}}/">
+      <img src="{{base_url}}/static/brand.png" width="140px">
+      </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+          <li><sub><b>beta</b> (not ready for use)</sub></li>
+        <!-- <li><a href="{{base_url}}/home/" id="navlink">Home</a></li> -->
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{{base_url}}/buybeat/" id="navlink">Buy beats</a></li>
+        {%
+        if 'email' in session:
+        %}
+        <li><a href="{{base_url}}/sellbeat" id="navlink">Sell beats</a></li>
+        <!--<li><a href="{{base_url}}/cart" id="navlink">Cart</a></li>-->
+        <li><a href="{{base_url}}/dashboard" id="navlink">Dashboard</a></li>
+        <li><a href="{{base_url}}/logout" id="navlink">Logout</a></li>
+        {%
+        else:
+        %}
+        <li><a href="{{base_url}}/sellbeat" id="navlink">Sell beats</a></li>
+        <li><a href="{{base_url}}/signup" id="navlink">Signup</a></li>
+        <li><a href="{{base_url}}/login" id="navlink">Login</a></li>
+        {%
+        endif
+        %}
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div class="container-fluid minh">
+    <div class="row"  style="background:#000; margin-top:-30px; color:#fff;">
+        <br><br>
+        <div class="col-sm-8 col-sm-offset-2">
+            <form action="{{base_url}}/search/" method="post">
+                <div class="form-group">
+                    <input type="text" class="form-control input-lg" name="param" placeholder="Search by beats, producers, or genres ...">
+                </div>
+            </form>
+            <br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <p class="text-center">
+                <br>
+                Buy high quality royalty free beats for your music projects. We have a variety of beats from Hiphop Beats, Afro Pop, RnB, Ningala, Reggae and many more genres.
+                <br>
+            </p>
+        </div>
+    </div>
+    <hr>
+    <br>
+{% block head %}{% endblock %}
+<div class="col-sm-12">
+    {% block content %}
+
+    {% endblock %}
+</div>
+
+
+
+</div>
+
+
+
+<div class="container-fluid" id="footer">
+    <div class="col-sm-3">
+        <br>
+        <b>Quick Links</b><br>
+        <a href="{{base_url}}/home/">About Us</a><br>
+        <a href="{{base_url}}/buybeat/">Privacy Policy</a><br>
+        <a href="{{base_url}}/sellbeat">Terms of Service</a><br>
+    </div>
+    <div class="col-sm-6">
+
+    </div>
+    <div class="col-sm-3">
+        <br>
+        <b>CONTACT US</b><br>
+        <small>connect@buythebeat.com<br>Telephone: 254-205-238-652<br>8.00am - 5.00pm CAT</small>
+        <hr>
+        <small>© 2016. buythebeat.com.<br>A <a href="http://birowaks.com" target="_blank">Birowaks Media and Technology</a> Company</small>
+        <br><br>
+    </div>
+</div>
+
+
+
+<!--Paypal Javascript-->
+<script>
+window.paypalCheckoutReady = function() {
+    paypal.checkout.setup('M2442TJBSSK8E', {
+        environment: 'sandbox',
+        container: 'myContainer',
+        buttons: [
+             {
+               container: 'myContainer',
+               type: 'checkout',
+               color: 'gold',
+               size: 'small',
+               shape: 'rect'
+              }
+        ]
+    });
+
+};
+</script>
+
+
+
+<script src="//www.paypalobjects.com/api/checkout.js" async></script>
+<!-- End of Paypal Javascript-->
+</body>
+<!-- Latest compiled and minified JavaScript -->
+<script src='/static/js/jquery.min.js'></script>
+<script src='/static/js/bootstrap.min.js'></script>
+<script src='/static/js/holder.min.js'></script>
+<script src='/static/js/ie10-viewport-bug-workaround.js'></script>
+</html>

@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %}{{beatmaker[3]}}{% endblock %}
+{% block head %}{% endblock %}
+
+{% block content %}
+<script ="">
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+<div class="row">
+    <div class="col-sm-2">
+        <img src="{{base}}/{{beatmaker[7]}}" class="img-responsive">
+        <br>
+        <b style="text-transform:capitalize;">{{beatmaker[3]}}</b><br>
+        <em>{{beatmaker[5]}}</em>
+        <hr>
+
+
+        <div class="btn-group btn-group-sm" role="group" aria-label="...">
+          <button type="button" class="btn btn-default btn-warning">follow</button>
+          <button type="button" class="btn btn-default btn-primary">contact</button>
+        </div>
+    </div>
+
+    <div class="col-sm-10">
+        <!--cover-->
+        <img src="{{base}}/{{beatmaker[8]}}" class="img-responsive">
+
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 style="text-transform:capitalize">{{beatmaker[3]}} Music Store</h3>
+                <br>
+                <table class="table">
+                    {% for b in beats %}
+                    <tr>
+                            <td width="50%"><small>{{b[2]}}</small></td>
+                            <td width="30%">
+                                <audio controls style="width:100%; background:#fff;">
+                                  <source src="{{b.5}}" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                                </audio>
+
+                            </td>
+                            <td width="20%"><a href="{{base_url}}/addtocart/{{b[0]}}&{{beatmaker[1]}}" class="btn btn-btb btn-xs">add to cart</a></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <div class="col-sm-6">
+                <br>
+                <button type="button" class="btn btn-default btn-lg pull-right" data-toggle="tooltip" data-placement="left" title="Share My Music">
+                    <div class="glyphicon glyphicon-share"></div>
+                </button>
+                <br><br><br>
+                <b>My Albums</b>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<br><br><br><br><br><br><br><br><br>
+{% endblock %}

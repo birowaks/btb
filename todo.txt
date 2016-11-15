@@ -1,0 +1,5 @@
+TODO
+
++ Email during registration
++ Instructions on dashboard
++ Payment checkout (PayPal)

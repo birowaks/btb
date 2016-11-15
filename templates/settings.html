@@ -1,0 +1,53 @@
+{% extends 'account.html' %}
+
+{% block manage %}
+<div class="col-sm-6">
+<h2>Settings</h2>
+<hr>
+
+<form action="" method="post"  enctype="multipart/form-data">
+<div class="form-group">
+<b>Email</b>
+    <input type="text" class="form-control" name="email" placeholder="email" value="{{data[2]}}">
+</div>
+<div class="form-group">
+<b>Username</b>
+    <input type="text" class="form-control" name="username" placeholder="username" value="{{data[3]}}">
+</div>
+<div class="form-group">
+<b>Account Type:</b>
+    <select name="acctype" class="form-control">
+        <option>{{data[5]}}</option>
+        <option value="beatmaker">Beat Maker</option>
+        <option value="beatbuyer">Beat Buyer</option>
+        <option value="fun">Just a Fun</option>
+    </select>
+</div>
+<input type="hidden" name="uid"  value="{{session['userref']}}"/>
+<div class="form-group">
+<b>Payments are made through paypal.<small>Enter your paypal account email</small></b>
+    <input type="text" class="form-control" name="paypal" value="{{data[6]}}">
+</div>
+<hr>
+<div class="form-group">
++ <a href="{{base_url}}/password/" id="link" class="danger">Change Password</a><br>
+</div>
+<hr>
+<div class="form-group">
+<b>Current photo</b><br>
+<img src="{{data[7]}}" class="img-responsive" alt="Responsive image" width="300px">
++ <a href="{{base_url}}/profile/" id="link" class="danger">Change Profile Photo</a><br>
+</div>
+<hr>
+<div class="form-group">
+<b>Current cover</b><br>
+<img src="{{data[8]}}" class="img-responsive" alt="Responsive image" width="300px">
++ <a href="{{base_url}}/cover/" id="link" class="danger">Change Cover Graphic</a><br>
+</div>
+<hr>
+<div class="form-group">
+    <input type="submit" value="Update" name="submit" class="btn btn-btb btn-lg">
+</div>
+</form>
+</div>
+{% endblock %}

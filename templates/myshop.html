@@ -1,0 +1,32 @@
+{% extends 'account.html' %}
+
+{% block manage %}
+<div class="text-left">
+<h2>My Shop</h2>
+</div>
+<div class="text-right">
+<a href="{{base_url}}/newbeat" class="btn btn-warning btn-sm">New Beat</a>
+</div>
+<hr>
+{% for b in beat %}
+        <div class="col-sm-2">
+
+        <img  src="{{data[7]}}" class="featurette-image img-responsive center-block">
+        <audio controls style="width:100%">
+          <source src="{{b.5}}" type="audio/mpeg">
+        Your browser does not support the audio element.
+        </audio>
+        {{ b.2 }}<br>
+        <em>{{b.3}}</em><br>
+        <b class="danger">${{b.7}}</b>
+        <br><br>
+        <a href="{{base_url}}/editbeat/{{b.0}}" class="btn btn-sm btn-primary">Edit</a>  <a href="{{base_url}}/deletebeat/{{b.0}}" class="btn btn-sm btn-danger">Delete</a>
+        <br>
+        </div>
+{% endfor %}
+<div class="clearfix"></div>
+<hr>
+<div class="text-right">
+<a href="{{base_url}}/newbeat" class="btn btn-warning btn-sm">New Beat</a>
+</div>
+{% endblock %}

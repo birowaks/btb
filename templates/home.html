@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Buy Beats Online{% endblock %}
+{% block head %}<h1 class="text-center">Buy Beats Online</h1>{% endblock %}
+
+{% block content %}
+{% if msg != None %}
+    <p style="color:#cc0000; font-weight:bold;" class=" text-right">
+        {{msg}} {{session['email']}}
+    </p>
+{% endif %}
+{{base_url}}
+<p class="text-center">
+Buy high quality royalty free beats for your music projects. We have a variety of beats from Hiphop Beats, Afro Pop, RnB, Ningala, Reggae and many more genres.
+</p>
+
+
+{% endblock %}

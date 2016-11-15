@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block title %}Buy Beats Online{% endblock %}
+{% block head %}{% endblock %}
+
+{% block content %}
+
+<div class="row">
+
+    <div class="row col-sm-9">
+            {% for b in data %}
+
+            <div class="col-sm-4">
+                <div class="col-sm-5">
+                    <img src="{{base_url}}{{img(b.1)}}" class="img-responsive">
+                </div>
+                <div class="col-sm-7">
+                    <b>{{ b.2 }}</b> <br>
+                    <audio controls style="width:100%;">
+                      <source src="{{b.5}}" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <em>{{ b.3 }}</em><br>
+                    <a href="{{base_url}}/beatshop/{{producer(b.1)}}" id="plink" style="text-transform:capitalize;">{{producer(b.1)}}</a><br>
+                    <h5 class="danger text-left">${{b.7}}</h5>
+                    <a href="{{base_url}}/addtocart/{{ b.0 }}&{{producerref(b.1)}}" class="btn btn-btb right-block">add to cart</a>
+                </div>
+                <div class="clearfix"></div>
+                <br>
+            </div>
+
+            {% endfor %}
+    </div>
+    <div class="col-sm-3">
+           <a class="btn btn-btb btn-lg center-block" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+               My Shopping Cart
+            </a>
+
+            <div class="collapse" id="collapseExample">
+                <table class="table table-striped">
+                    <tr>
+                        <th><small>Beatname</small></th><th><small>Price</small></th><th class="text-center"><small>Action</small></th>
+                    </tr>
+                    {% for b in cart %}
+                    <tr>
+                        <td><small>{{b.2}}</small></td><td><small>${{b.5}}</small></td><td class="text-center"><small><a href="{{base_url}}/deletefromcart/{{b.0}}" class="danger" title="Delete from Shopping list"><b>X</b></a></small></td>
+                    </tr>
+                    {% endfor %}
+                    <th><small>Total</small></th><th><b class="text-success">${{total}}</b></th><th></th>
+                </table>
+                <a href="{{base_url}}/cart/" class="btn btn-warning">Checkout</a>
+            </div>
+
+            <script>
+            $('.collapse').collapse()
+            </script>
+            <br>
+        <b>Sponsored</b>
+            <br>
+            <img src="http://placehold.it/320x320" class="img-responsive">
+
+            <hr>
+
+            <b>Beat Stores</b>
+            <ul class="list-unstyled">
+              <li>...</li>
+            </ul>
+    </div>
+
+</div>
+<hr class="text-center" style="width:50%;">
+<div class="row">
+    <div class="col-sm-6">
+        <h4>Top Selling Beats</h4>
+    </div>
+    <div class="col-sm-6">
+        <h4>Top Selling BeatMakers</h4>
+    </div>
+</div>
+
+
+<br><br><br><br><br><br><br><br><br>
+{% endblock %}

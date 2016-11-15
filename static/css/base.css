@@ -1,0 +1,115 @@
+
+.navbar-btb
+{
+    background:#fff;
+    border-bottom:1px #eee solid;
+}
+
+a
+{
+    color:#000;
+}
+
+a:hover
+{
+    color:#333;
+}
+
+#navbar-brand
+{
+    font-weight:bold;
+    color:#000;
+    font-size:20px;
+}
+
+#navlink
+{
+    color:#000;
+    font-weight:bold;
+}
+
+.navbar-toggle collapsed
+{
+    background:#000;
+}
+
+#navbar-toggle collapsed
+{
+    background:#000;
+}
+
+.navbar-btb .navbar-toggle .icon-bar {
+    border:2px solid #f0ae00;
+}
+
+.navbar-toggle collapsed
+{
+    color:#ff0000;
+    background:#ff000;
+}
+.link a
+{
+    color:#000;
+}
+#plink a
+{
+    color:#f0ae00;
+}
+#plink
+{
+    color:#f0ae00;
+}
+.btn-btb
+{
+    background:#f0ae00;
+    border-radius:2px;
+    color:#fff;
+}
+
+.btn-btb:hover
+{
+    background:#fff;
+    border:1px #000 solid;
+}
+
+.btn-btbf
+{
+015
+    background:#fff;
+    border:1px #ddd solid;
+    color:#000;
+    width:100%;
+    text-align:left;
+    border-radius:3px;
+}
+
+.danger
+{
+    color:#ff0000;
+}
+
+.clear
+{
+    clear:both;
+}
+
+.minh
+{
+    min-height:600px;
+}
+
+/*.vbottom{*/
+/*    top: 100%;*/
+/*    bottom:0;*/
+/*}*/
+
+#footer
+{
+    background:#111;
+    color:#fff;
+    border-top:8px #f0ae00 solid;
+}
+#footer a
+{
+    color:#f0ae00;
+}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Shopping Cart{% endblock %}
+
+{% block content %}
+<div class="col-sm-6">
+    <h3>Shopping Cart</h3>
+    <p></p>
+    <table class="table table-striped">
+    <tr>
+        <th>Beatname</th><th> Price</th><th class="text-center">Action</th>
+    </tr>
+        {% for b in cart %}
+        <tr>
+            <td>{{b.2}}</td><td>${{b.5}}</td><td class="text-center"><a href="{{base_url}}/deletefromcart/{{b.0}}" class="danger" title="Delete from Shopping list"><b>X</b></a></td>
+        </tr>
+        {% endfor %}
+        <th>Total</th><th><b class="warning">${{total}}</b></th><th></th>
+    </table>
+
+</div>
+<div class="col-sm-6">
+
+</div>
+
+
+{% endblock %}

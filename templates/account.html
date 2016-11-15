@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<p class="text-right">
+<b>Account Number:</b> {{session['userref']}}<br>
+<b>Account Email:</b>  {{session['email']}}
+</p>
+<hr>
+<div class="row">
+    <div class="col-sm-2">
+        <img src="{{data[7]}}" class="img-responsive" alt="Responsive image">
+    <br>
+    <b>SHOP MANAGEMENT</b>
+    <ul class="nav nav-pills nav-stacked">
+        <li><a href="{{base_url}}/dashboard" id="link">Dashboard</a></li>
+        <li><a href="{{base_url}}/myshop" id="link">My Shop</a></li>
+        <li><a href="{{base_url}}/reports" id="link">Reports</a></li>
+        <li><a href="{{base_url}}/settings" id="link">Account Settings</a></li>
+    </ul>
+    </div>
+    <div class="col-sm-8">
+        <img src="{{data[8]}}" alt="Recommended Size 1000x210" title="Recommended Size 1000x210" class="img-responsive">
+    <p>
+        {% block manage %}
+
+        {% endblock %}
+    </p>
+    </div>
+    <div class="col-sm-2">
+        <b>Buythebeat Account Updates</b>
+        <ul class="nav nav-pills nav-stacked">
+            <li></li>
+        </UL>
+    </div>
+
+</div>
+{% endblock %}

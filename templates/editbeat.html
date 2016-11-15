@@ -1,0 +1,46 @@
+{% extends 'account.html' %}
+
+{% block manage %}
+    <div class="col-sm-4 col-sm-offset-2">
+    <h2>Edit Beat</h2>
+    <hr>    
+    {% if error != None %}
+        {{error}}
+    {% endif %}
+    <form action="" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+        <b>Beat Name</b> 
+        <input type="text" class="form-control" name="beatname" placeholder="beat name" value="{{beat[2]}}">
+        </div>
+        <div class="form-group">
+        <b>Genre</b> 
+        <select name="genre" class="form-control">
+            <option>{{beat[3]}}</option>
+            <option>Hiphop</option>
+            <option>Rock</option>
+            <option>RnB</option>
+            <option>Dance</option>
+            <option>Jazz</option>
+            <option>Ningala</option>
+            <option>Kapuka</option>
+        </select>
+        </div>
+        <div class="form-group">
+        <b>Price of Beat(In USD[$])</b>
+        <input type="text" class="form-control" name="price" placeholder="price in USD($)" value="{{beat[7]}}">
+        </div>
+        <div class="form-group">
+        <b>Mp3</b>
+            <audio controls style="width:100%">
+              <source src="{{beat[5]}}" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+            <p class="danger">The audio file cannot be changed. If you wish to make a change to it; just delete the <b>beat</b> and create a new beatwith the correct audio.</p>
+        </div>
+        
+        <div class="form-group">
+        <input type="submit" value="submit" name="submit"  class="btn btn-btb btn-lg">
+        </div>
+    </form>
+    </div>
+{% endblock %}

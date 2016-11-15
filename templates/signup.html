@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<div class="col-sm-2 col-md-offset-5">
+    <h3>Sign Up</h3>
+    <hr>
+    {% if error != None %}
+        <p style="color:#cc0000; font-weight:bold;">
+            {{error}}
+        </p>
+    {% endif %}
+    {{x}}
+    <p>
+    <form action="" method="post">
+        <p><input type="text" name="email" placeholder="email"></p>
+        <p><input type="text" name="username" placeholder="username"></p>
+        <p><input type="password" name="password" placeholder="password"></p>
+        <p>Account Type <small>(select one account type)</small></p>
+
+        <p>
+          <input type="radio" name="type" value="beatmaker"> Beat Maker<br>
+          <input type="radio" name="type" value="beatbuyer"> Beat Buyer<br>
+          <input type="radio" name="type" value="fun"> Just a fun
+        </p>
+
+        <p><input type="submit" value="signup" class="btn btn-btb btn-lg"></p>
+    </form>
+    </p>
+</div>
+{% endblock %}
