@@ -30,7 +30,7 @@ logging.basicConfig(level=logging.INFO)
 app =Flask(__name__)
 
 
-db = MySQLdb.connect(host='birowaks.mysql.pythonanywhere-services.com', user='birowaks', passwd='Baraka4me2!', db='birowaks$buythebeat')
+db = MySQLdb.connect(host='birowaks.mysql.pythonanywhere-services.com', user='*****', passwd='******', db='******')
 cursor = db.cursor()
 
 base_url="http://www.buythebeat.com"
